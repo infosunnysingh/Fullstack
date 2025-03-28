@@ -1,29 +1,23 @@
 "use strict"; // treat all JS code as newer version
 
-// alert( 3 + 3) // we are using nodejs, not browser
+// ✅ Primitive Data Types (Stack Memory 🏗️)
+let num = 10;         // number
+let str = "Sunny";    // string
+let isTrue = false;   // boolean
+let notDefined;       // undefined
+let empty = null;     // null
+let id = Symbol("id");// symbol
+let bigNum = 123n;    // bigint
 
-console.log(3 
-    +
-     3) // code readability should be high
+// ✅ Non-Primitive (Reference) Data Types (Heap Memory 🏢)
+let obj = { name: "Sunny", age: 25 }; // object
+let arr = ["Apple", "Mango", "Banana"]; // array
+function greet() { return "Hello"; } // function
 
-console.log("Hitesh")
-
-
-let name = "hitesh"
-let age = 18
-let isLoggedIn = false
-let state;
-
-// number => 2 to power 53
-// bigint
-// string => ""
-// boolean => true/false
-// null => standalone value
-// undefined => 
-// symbol => unique
+console.log(typeof num, num); // number, 10
+console.log(typeof obj, obj); // object, { name: "Sunny", age: 25 }
 
 
-// object
-
-console.log(typeof undefined); // undefined
-console.log(typeof null); // object
+// ✅ Memory Allocation
+// - Primitive types directly Stack me store hote hain
+// - Non-Primitive types ka reference Stack me hota hai, actual value Heap me store hoti hai
