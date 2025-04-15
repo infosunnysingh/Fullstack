@@ -1,37 +1,41 @@
-//  Primitive
+// 🔸 Primitive Data Types
+// Immutable hote hain, direct value store hoti hai (Stack memory)
 
-//  7 types : String, Number, Boolearn, null, undefined, Symbol, BigInt
+const score = 100;                    // Number
+const scoreValue = 100.3;            // Number (float bhi number hi hota hai)
+const isLoggedIn = false;            // Boolean
+const outsideTemp = null;            // null → special value, type "object" (JS ka bug)
+let userEmail;                       // undefined → value assigned hi nahi
+const id = Symbol('123');            // Symbol → unique value create karta hai
+const anotherId = Symbol('123');
 
-const score = 100
-const scoreValue = 100.3
+console.log(id === anotherId);       // false → Symbol hamesha unique hota hai
 
-const isLoggedIn = false
-const outsideTemp = null
-let userEmail;
+// const bigNumber = 12345678901234567890n; // BigInt → bade number ke liye (end me n)
 
-const id = Symbol('123')
-const anotherId = Symbol('123')
+// 🔸 Primitive Data Types: Total 7
+// String, Number, Boolean, null, undefined, Symbol, BigInt
 
-console.log(id === anotherId);
-
-// const bigNumber = 3456543576654356754n
+// ✅ Primitive → Stack memory me store hote hain (copy hoti hai value)
 
 
+// 🔹 Non-Primitive (Reference) Data Types
+// Array, Object, Function
 
-// Reference (Non primitive)
-
-// Array, Objects, Functions
-
-const heros = ["shaktiman", "naagraj", "doga"];
+const heros = ["shaktiman", "naagraj", "doga"]; // Array
 let myObj = {
     name: "hitesh",
-    age: 22,
-}
+    age: 22
+};                                              // Object
 
 const myFunction = function(){
     console.log("Hello world");
-}
+};                                              // Function
 
-console.log(typeof anotherId);
+// ✅ Reference types → Heap memory me store hote hain (reference pass hota hai)
 
-// https://262.ecma-international.org/5.1/#sec-11.4.3
+console.log(typeof heros);       // object
+console.log(typeof myObj);       // object
+console.log(typeof myFunction);  // function (but technically object function)
+
+console.log(typeof anotherId);   // symbol
